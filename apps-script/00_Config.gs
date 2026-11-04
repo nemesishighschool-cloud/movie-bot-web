@@ -77,7 +77,7 @@ var SEED_SETTINGS = [
   ["max_retries", "3"],
   ["fallback_provider", "openrouter"],
   ["max_message_chars", "32000"],
-  ["daily_user_token_limit", "2000"],
+  ["daily_user_token_limit", "20000"],
   ["archive_after_days", "90"],
   ["max_download_mb", "100"],
   ["lock_after_failures", "5"],

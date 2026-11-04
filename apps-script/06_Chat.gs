@@ -137,7 +137,7 @@ function action_send_message(body) {
     conv = findRow_("Conversations", "conv_id", conv.conv_id);
   }
 
-  var dailyLimit = settingNum_("daily_user_token_limit", 2000);
+  var dailyLimit = settingNum_("daily_user_token_limit", 20000);
   var today = nowIso_().slice(0, 10);
   var used = 0;
   rows_("Usage").forEach(function (u) {
@@ -337,10 +337,10 @@ function action_usage_mine(body) {
   rowsOut.forEach(function (u) { delete u._row; });
   var today = nowIso_().slice(0, 10);
   var todayTokens = 0;
-  rowsOut.forEach(function (u) {
+  all.forEach(function (u) {
     if (String(u.created_at).indexOf(today) === 0) todayTokens += asNum_(u.tokens_in, 0) + asNum_(u.tokens_out, 0);
   });
-  return ok_({ rows: rowsOut, todayTokens: todayTokens, dailyLimit: settingNum_("daily_user_token_limit", 2000) });
+  return ok_({ rows: rowsOut, todayTokens: todayTokens, dailyLimit: settingNum_("daily_user_token_limit", 20000) });
 }
 
 function action_export_data(body) {

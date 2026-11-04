@@ -27,7 +27,7 @@ export default function AdvertisingSpace() {
   const steps: { icon: IconName; title: string; text: string }[] = [
     { icon: 'play-circle', title: 'Choisissez une publicité', text: 'Vous décidez si vous souhaitez regarder une publicité proposée.' },
     { icon: 'gift', title: 'Recevez vos crédits', text: 'Après validation, les crédits prévus seront ajoutés à votre compte.' },
-    { icon: 'film', title: 'Profitez de Movibot', text: 'Les crédits pourront servir aux fonctionnalités compatibles de la plateforme.' },
+    { icon: 'film', title: 'Profitez de Movibot', text: 'À terme, 1 crédit donnera 1 token supplémentaire pour le chatbot. Ce taux pourra évoluer.' },
   ];
   return (
     <View style={[styles.root, { backgroundColor: c.bg }]}>
@@ -51,7 +51,7 @@ export default function AdvertisingSpace() {
         <View style={[styles.notice, { borderColor: c.border, backgroundColor: c.card }]}><Feather name="info" size={18} color={c.blue} /><Text style={[styles.noticeText, { color: c.text }]}>Aucune publicité ne sera lancée et aucun crédit ne sera ajouté pendant cette phase de préparation.</Text></View>
         <View style={styles.sectionHead}><Text style={[styles.sectionTitle, { color: c.title }]}>Comment ça fonctionnera</Text><Text style={[styles.sectionSub, { color: c.muted }]}>Simple, volontaire et transparent.</Text></View>
         <View style={[styles.steps, { backgroundColor: c.card, borderColor: c.border }]}>{steps.map((step, i) => <View key={step.title} style={[styles.step, i > 0 && { borderTopWidth: 1, borderTopColor: c.line }]}><View style={[styles.stepIcon, { backgroundColor: c.soft }]}><Feather name={step.icon} size={19} color={c.blue}/></View><View style={{flex:1}}><Text style={[styles.stepTitle, {color:c.title}]}>{step.title}</Text><Text style={[styles.stepText, {color:c.text}]}>{step.text}</Text></View><Text style={[styles.stepNumber, {color:c.muted}]}>{String(i + 1).padStart(2, '0')}</Text></View>)}</View>
-        <Text style={[styles.footer, { color: c.muted }]}>Les crédits, leur solde et l’historique seront disponibles une fois le système activé.</Text>
+        <Text style={[styles.footer, { color: c.muted }]}>Les publicités, les crédits, leur solde et leur utilisation ne sont pas encore activés. Les conditions seront précisées avant le lancement.</Text>
       </ScrollView>
     </View>
   );
